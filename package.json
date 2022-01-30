@@ -1,0 +1,22 @@
+{
+  "name": "unified-music-player",
+  "version": "1.0.0",
+  "description": "A music player that unifies popular online music libraries.",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kkogoat/unified-music-player.git"
+  },
+  "author": "dhv <huynhvu.dom@gmail.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/kkogoat/unified-music-player/issues"
+  },
+  "homepage": "https://github.com/kkogoat/unified-music-player#readme",
+  "devDependencies": {
+    "electron": "^16.0.8"
+  }
+}
