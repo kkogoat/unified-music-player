@@ -3,7 +3,7 @@
 import './css/App.css';
 
 // Components
-import {Player} from './components/Player';
+import {ExampleComponent} from './components/ExampleComponent';
 
 // Main Window that holds all other components
 function App() {
@@ -16,7 +16,9 @@ function App() {
                     Editing this file is LIVE, so no need to "npm run electron:serve"
                 </p>
             </header>
-            <Player />
+            
+            {/* THIS IS HOW TO COMMENT */}
+            <ExampleComponent />
         </div>
     );
 }
