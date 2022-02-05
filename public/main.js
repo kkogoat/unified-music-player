@@ -1,7 +1,7 @@
 const { app, BrowserWindow } = require('electron')
 
 const path = require('path')
-const isDev = require('electron-is-dev')
+const isDev = require('electron-is-dev');
 
 require('@electron/remote/main').initialize();
 
@@ -9,6 +9,7 @@ function createWindow () {
     const win = new BrowserWindow({
         width: 1280,
         height: 720,
+        frame: false, // Hides default menu bar
         webPreferences: {
             nodeIntegration: true,
             enabledRemoteModule: true
@@ -36,3 +37,4 @@ app.on('activate', function () {
         createWindow();
     }
 });
+// End of MacOS
