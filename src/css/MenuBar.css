@@ -1,0 +1,49 @@
+.MenuBar {
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+    user-select: none;
+
+    /* Dimensions */
+    height: 30px;
+
+    /* Display */
+
+    background: red;
+}
+
+/*Burger Menu*/
+#BurgerMenu {
+    float: left;
+
+    /* Dimensions */
+    height: 100%;
+
+    /* Display */
+    display: flex;
+
+    background: green;
+}
+
+/*Song Title*/
+#SongTitle {
+    float: left;
+
+    /* Dimensions */
+    height: 100%;
+
+    background: pink;
+}
+
+/*Window Controls*/
+#WindowControl {
+    float: right;
+
+    /* Dimensions */
+    height: 100%;
+
+    background: green;
+}
+
+.WindowControl-button {
+    -webkit-app-region: no-drag;
+}

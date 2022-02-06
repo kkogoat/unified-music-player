@@ -1,18 +1,21 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 
-const path = require('path')
+// Dev vs Production Code Switcher
 const isDev = require('electron-is-dev');
+const path = require('path')
 
-require('@electron/remote/main').initialize();
-
+// Main Electron Window
 function createWindow () {
     const win = new BrowserWindow({
         width: 1280,
         height: 720,
         frame: false, // Hides default menu bar
         webPreferences: {
-            nodeIntegration: true,
-            enabledRemoteModule: true
+            preload:
+                isDev
+                    ? path.join(__dirname, './preload.js')
+                    : path.join(__dirname, '../build/preload.js'),
+            contextIsolation: true
         }
     })
 
@@ -23,6 +26,7 @@ function createWindow () {
     )
 }
 
+// Render Window when ready
 app.on('ready', createWindow);
 
 // Below is for MacOS
@@ -38,3 +42,8 @@ app.on('activate', function () {
     }
 });
 // End of MacOS
+
+
+// IPC MAIN MENU BAR
+require('./js/MenuBarHandler.js');
+// END IPC MAIN MENU BAR
