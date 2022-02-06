@@ -4,7 +4,7 @@ import './css/App.css';
 
 // Components
 import { MenuBar } from './components/MenuBar';
-
+import {PlayPause} from './components/PlayPause';
 // Main Window that holds all other components
 function App() {
     return (
@@ -16,6 +16,7 @@ function App() {
                 Add components to do features. <br></br>
                 Editing this file is LIVE, so no need to "npm run electron:serve"
             </header>
+            <PlayPause />
         </div>
     );
 }
