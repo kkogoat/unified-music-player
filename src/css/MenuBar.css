@@ -26,13 +26,14 @@
 
     /* Inherit App Color - Step 2*/
     background-color: inherit;
+    box-sizing: border-box;
     border-right: 1px solid;
     border-bottom: 1px solid;
     border-color: inherit;
 }
 
 .burger {
-    padding: 0px 5px 0px 25px;
+    padding: 1px 5px 0px 25px;
     background: url(../assets/MenuBarAssets/menu_white_18dp.svg);
     background-position: 6px 6px;
 }
@@ -40,10 +41,15 @@
 /*Song Title*/
 #SongTitle {
     float: left;
+    text-align: left;
 
     /* Dimensions */
     height: 100%;
+    width: calc(100% - 166px);
 
+    /* background-color: darkslategray; */
+
+    /* Fine Tuning */
     line-height: 29px;
     padding-left: 15px;
 }
