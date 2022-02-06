@@ -7,8 +7,6 @@
     height: 30px;
 
     /* Display */
-
-    background: red;
 }
 
 /*Burger Menu*/
@@ -21,7 +19,14 @@
     /* Display */
     display: flex;
 
-    background: green;
+    border-right: 1px solid #314263;
+    border-bottom: 1px solid #314263;
+}
+
+.burger {
+    padding: 0px 5px 0px 25px;
+    background: url(../assets/MenuBarAssets/menu_white_18dp.svg);
+    background-position: 6px 6px;
 }
 
 /*Song Title*/
@@ -31,7 +36,8 @@
     /* Dimensions */
     height: 100%;
 
-    background: pink;
+    line-height: 28px;
+    padding-left: 15px;
 }
 
 /*Window Controls*/
@@ -41,9 +47,36 @@
     /* Dimensions */
     height: 100%;
 
-    background: green;
+    /* Display */
+    display: flex;
+}
+
+.quit {
+    padding: 0px 5px 0px 25px;
+    background: url(../assets/MenuBarAssets/close_white_18dp.svg);
+    background-position: 6px 6px;
+}
+
+.mini {
+    padding: 0px 5px 0px 25px;
+    background: url(../assets/MenuBarAssets/minimize_white_18dp.svg);
+    background-position: 6px 0px;
+}
+
+.max {
+    padding: 0px 5px 0px 25px;
+    background: url(../assets/MenuBarAssets/square_white_18dp.svg);
+    background-position: 6px 6px;
 }
 
 .WindowControl-button {
     -webkit-app-region: no-drag;
+    color: white;
+    background-color: #282c34;
+    background-repeat: no-repeat;
+    border-style: none;
+}
+
+.WindowControl-button:hover {
+    filter: brightness(150%);
 }

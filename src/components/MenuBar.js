@@ -21,12 +21,17 @@ export class MenuBar extends Component {
         window.api.MenuBar('maximize-app');
     }
 
+    // Menu
+    menuBtn () {
+        window.api.MenuBar('menu-app');
+    }
+
     render() {
         return (
             <div className='MenuBar'>
                 {/* Left Dropdown Menu*/}
                 <div id="BurgerMenu">
-                    UMP
+                    <button className='WindowControl-button burger' onClick={this.menuBtn}>UMP</button>
                 </div>
 
                 {/* Current Artist-Song */}
@@ -36,9 +41,9 @@ export class MenuBar extends Component {
 
                 {/* Window Controls */}
                 <div id='WindowControl'>
-                    <button className='WindowControl-button' onClick={this.quitBtn}>Quit</button>
-                    <button className='WindowControl-button' onClick={this.minimizeBtn}>Minimize</button>
-                    <button className='WindowControl-button' onClick={this.maximizeBtn}>Maximize</button>
+                    <button className='WindowControl-button mini' onClick={this.minimizeBtn}></button>
+                    <button className='WindowControl-button max' onClick={this.maximizeBtn}></button>
+                    <button className='WindowControl-button quit' onClick={this.quitBtn}></button>
                 </div>
 
             </div>

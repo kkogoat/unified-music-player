@@ -12,7 +12,7 @@ contextBridge.exposeInMainWorld('api', {
 
     // Menu Bar Functionality
     MenuBar: (channel, args) => {
-        let validChannels = ['quit-app', 'minimize-app', 'maximize-app'];
+        let validChannels = ['quit-app', 'minimize-app', 'maximize-app', 'menu-app'];
         if (validChannels.includes(channel)) {
             ipcRenderer.send(channel, args);
         }

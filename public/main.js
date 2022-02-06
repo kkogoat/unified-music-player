@@ -7,8 +7,8 @@ const path = require('path')
 // Main Electron Window
 function createWindow () {
     const win = new BrowserWindow({
-        width: 1280,
-        height: 720,
+        width: 760,
+        height: 485,
         frame: false, // Hides default menu bar
         webPreferences: {
             preload:
