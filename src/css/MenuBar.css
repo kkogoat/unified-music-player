@@ -6,6 +6,10 @@
     /* Dimensions */
     height: 30px;
 
+    
+    /* Inherit App Color - Step 1*/
+    background-color: inherit;
+
     /* Display */
 }
 
@@ -19,6 +23,8 @@
     /* Display */
     display: flex;
 
+    /* Inherit App Color - Step 2*/
+    background-color: inherit;
     border-right: 1px solid #314263;
     border-bottom: 1px solid #314263;
 }
@@ -36,7 +42,7 @@
     /* Dimensions */
     height: 100%;
 
-    line-height: 28px;
+    line-height: 29px;
     padding-left: 15px;
 }
 
@@ -49,6 +55,9 @@
 
     /* Display */
     display: flex;
+
+    /* Inherit App Color - Step 2*/
+    background-color: inherit;
 }
 
 .quit {
@@ -72,7 +81,9 @@
 .WindowControl-button {
     -webkit-app-region: no-drag;
     color: white;
-    background-color: #282c34;
+
+    /* Inherit App Color - Step 3*/
+    background-color: inherit;
     background-repeat: no-repeat;
     border-style: none;
 }
