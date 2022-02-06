@@ -9,6 +9,7 @@
     
     /* Inherit App Color - Step 1*/
     background-color: inherit;
+    border-color: inherit;
 
     /* Display */
 }
@@ -25,8 +26,9 @@
 
     /* Inherit App Color - Step 2*/
     background-color: inherit;
-    border-right: 1px solid #314263;
-    border-bottom: 1px solid #314263;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-color: inherit;
 }
 
 .burger {
@@ -80,7 +82,7 @@
 
 .WindowControl-button {
     -webkit-app-region: no-drag;
-    color: white;
+    color: inherit;
 
     /* Inherit App Color - Step 3*/
     background-color: inherit;
