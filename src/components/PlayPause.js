@@ -13,9 +13,8 @@ export class PlayPause extends Component {
     }
     //function to play
      play(){
-        this.audio.play();
-           console.log("play function successfully reached this line");
-         }
+       window.api.PlayPause('PLAY', 'Porter Robinson - Look At The Sky.mp3');
+    }
     //function to pause 
     pause(){
     this.audio.pause();

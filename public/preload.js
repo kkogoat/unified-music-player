@@ -18,4 +18,10 @@ contextBridge.exposeInMainWorld('api', {
         }
     },
 
+    PlayPause: (channel, args) => {
+        let validChannels = ['PLAY'];
+        if (validChannels.includes(channel)) {
+            ipcRenderer.send(channel, args);
+        }
+    }
 });
