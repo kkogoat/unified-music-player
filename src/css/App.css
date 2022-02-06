@@ -7,5 +7,6 @@
     height: 100vh;
 
     box-sizing: border-box;
-    border: 1px solid #314263;
+    border: 1px solid;
+    border-color: #314263;
 }

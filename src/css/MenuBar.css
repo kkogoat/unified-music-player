@@ -6,6 +6,11 @@
     /* Dimensions */
     height: 30px;
 
+    
+    /* Inherit App Color - Step 1*/
+    background-color: inherit;
+    border-color: inherit;
+
     /* Display */
 }
 
@@ -19,12 +24,16 @@
     /* Display */
     display: flex;
 
-    border-right: 1px solid #314263;
-    border-bottom: 1px solid #314263;
+    /* Inherit App Color - Step 2*/
+    background-color: inherit;
+    box-sizing: border-box;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-color: inherit;
 }
 
 .burger {
-    padding: 0px 5px 0px 25px;
+    padding: 1px 5px 0px 25px;
     background: url(../assets/MenuBarAssets/menu_white_18dp.svg);
     background-position: 6px 6px;
 }
@@ -32,11 +41,16 @@
 /*Song Title*/
 #SongTitle {
     float: left;
+    text-align: left;
 
     /* Dimensions */
     height: 100%;
+    width: calc(100% - 166px);
 
-    line-height: 28px;
+    /* background-color: darkslategray; */
+
+    /* Fine Tuning */
+    line-height: 29px;
     padding-left: 15px;
 }
 
@@ -49,6 +63,9 @@
 
     /* Display */
     display: flex;
+
+    /* Inherit App Color - Step 2*/
+    background-color: inherit;
 }
 
 .quit {
@@ -71,8 +88,10 @@
 
 .WindowControl-button {
     -webkit-app-region: no-drag;
-    color: white;
-    background-color: #282c34;
+    color: inherit;
+
+    /* Inherit App Color - Step 3*/
+    background-color: inherit;
     background-repeat: no-repeat;
     border-style: none;
 }
