@@ -11,6 +11,7 @@ import { Explore } from './components/Explore';
 
 import {PlayPause} from './components/PlayPause';
 
+
 // Main Window that holds all other components
 function App() {
     return (
