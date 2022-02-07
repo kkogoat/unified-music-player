@@ -17,8 +17,13 @@ ipcMain.on('minimize-app', function (args) {
 // Maximize Window
 ipcMain.on('maximize-app', function (args) {
     var window = BrowserWindow.getFocusedWindow();
-    console.log("UMP-Maximized");
-    window.setFullScreen(!window.isFullScreen());
+    if(window.isMaximized()) {
+        console.log("UMP-UNMaximized");
+        window.unmaximize();
+    } else {
+        console.log("UMP-Maximized");
+        window.maximize();
+    }
 });
 
 // Menu App
