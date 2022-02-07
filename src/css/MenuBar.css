@@ -8,13 +8,12 @@
 
     
     /* Inherit App Color - Step 1*/
-    background-color: inherit;
-    border-color: inherit;
+    background-color: var(--background-primary);
+    border-color: var(--border-color);
 
     /* Display */
 }
 
-/*Burger Menu*/
 #BurgerMenu {
     float: left;
 
@@ -25,11 +24,10 @@
     display: flex;
 
     /* Inherit App Color - Step 2*/
-    background-color: inherit;
+    background-color: var(--background-primary);
     box-sizing: border-box;
-    border-right: 1px solid;
-    border-bottom: 1px solid;
-    border-color: inherit;
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .burger {
@@ -38,7 +36,6 @@
     background-position: 6px 6px;
 }
 
-/*Song Title*/
 #SongTitle {
     float: left;
     text-align: left;
@@ -47,14 +44,11 @@
     height: 100%;
     width: calc(100% - 166px);
 
-    /* background-color: darkslategray; */
-
     /* Fine Tuning */
     line-height: 29px;
     padding-left: 15px;
 }
 
-/*Window Controls*/
 #WindowControl {
     float: right;
 
@@ -65,7 +59,7 @@
     display: flex;
 
     /* Inherit App Color - Step 2*/
-    background-color: inherit;
+    background-color: var(--background-primary);
 }
 
 .quit {
@@ -91,7 +85,7 @@
     color: inherit;
 
     /* Inherit App Color - Step 3*/
-    background-color: inherit;
+    background-color: var(--background-primary);
     background-repeat: no-repeat;
     border-style: none;
 }

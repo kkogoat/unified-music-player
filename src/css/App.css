@@ -1,12 +1,11 @@
 .App {
-    background-color:#282c34;
-    color:white;
+    background-color: var(--background-primary);
+    color: var(--text-color);
     text-align: center;
 
     /*dimensions*/
     height: 100vh;
 
     box-sizing: border-box;
-    border: 1px solid;
-    border-color: #314263;
+    border: 1px solid var(--border-color);
 }
