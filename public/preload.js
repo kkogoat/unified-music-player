@@ -19,7 +19,7 @@ contextBridge.exposeInMainWorld('api', {
     },
 
     PlayPause: (channel, args) => {
-        let validChannels = ['PLAY'];
+        let validChannels = ['PLAY', 'PAUSE','SELECTLOCAL'];
         if (validChannels.includes(channel)) {
             ipcRenderer.send(channel, args);
         }

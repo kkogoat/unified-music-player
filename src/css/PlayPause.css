@@ -41,3 +41,15 @@
             background-color: #ba001f;
             color: white;
           }
+          .button3 {
+            background-color: white;
+            color: black;
+            border: 2px solid #06cddb;
+            padding: 12px 28px;
+            transition-duration: 0.4s;
+          }
+          
+          .button3:hover {
+            background-color: #06cddb;
+            color: white;
+          }
