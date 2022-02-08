@@ -19,5 +19,8 @@ module.exports = {
     "script-src": [
       "'self'",
     ],
+    "media-src": [
+      "blob:",
+    ]
   }
 }

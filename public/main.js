@@ -4,35 +4,52 @@ const { app, BrowserWindow, ipcMain } = require('electron')
 const isDev = require('electron-is-dev');
 const path = require('path')
 
+// Settings
+const { getWinSettings, saveWinSettings, getWinPos, saveWinPos } = require('./settings.js');
+
 // Main Electron Window
 function createWindow () {
+
+    // Get Previous or Default Window Size
+    const win_size = getWinSettings();
+    const win_pos = getWinPos();
+
     const win = new BrowserWindow({
         //Width
         minWidth: 650,
-        width: 760,
+        width: win_size[0],
 
         //Height
         minHeight: 300,
-        height: 485,
+        height: win_size[1],
+
+        //Position
+        x: win_pos[0], y: win_pos[1],
 
         // Hides default menu bar
         frame: false,
 
+        show: false,
+
         // Environment
         webPreferences: {
-            preload:
-                isDev
-                    ? path.join(__dirname, './preload.js')
-                    : path.join(__dirname, '../build/preload.js'),
+            preload: path.join(__dirname, './preload.js'),
             contextIsolation: true
         }
     })
+
+    win.on("resized", () => saveWinSettings(win.getSize()));
+    win.on("moved", () => saveWinPos(win.getPosition()));
 
     win.loadURL(
         isDev
             ? 'http://localhost:3000'
             : `file://${path.join(__dirname, '../build/index.html')}`
-    )
+    );
+
+    win.webContents.on('did-finish-load', function() {
+        win.show();
+    });
 }
 
 // Render Window when ready
