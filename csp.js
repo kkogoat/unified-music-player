@@ -9,6 +9,8 @@ module.exports = {
     ],
     "frame-src": [
       "www.youtube-nocookie.com",
+      "https://w.soundcloud.com/",
+      "https://soundcloud.com/"
     ],
     "media-src": [
       "blob:",

@@ -10,7 +10,7 @@ import { Playlist } from './components/Playlist';
 import { Explore } from './components/Explore';
 
 import {PlayPause} from './components/PlayPause';
-
+import{SoundCloud} from  './components/SoundCloud';
 
 // Main Window that holds all other components
 function App() {
@@ -27,6 +27,7 @@ function App() {
                     </Switch>
                 </div>
                 <PlayPause />
+                <SoundCloud/>
             </div>
         </Router>
     );

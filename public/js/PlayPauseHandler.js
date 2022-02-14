@@ -12,7 +12,7 @@ ipcMain.on('PAUSE', function (event, args) {
     console.log(args);
 });
 
-// Select local file -- does not work right now
+//Select Local File
 ipcMain.on('SELECTLOCAL', function (event, args) {
     console.log("SELECT LOCAL");
     console.log(args);

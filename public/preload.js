@@ -23,5 +23,12 @@ contextBridge.exposeInMainWorld('api', {
         if (validChannels.includes(channel)) {
             ipcRenderer.send(channel, args);
         }
+    },
+
+    SoundCloud: (channel, args) => {
+        let validChannels = ['SoundCloudDisplay','handleChangeInputBoxSoundCloud'];
+        if (validChannels.includes(channel)) {
+            ipcRenderer.send(channel, args);
+        }
     }
 });
