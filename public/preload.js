@@ -30,5 +30,22 @@ contextBridge.exposeInMainWorld('api', {
         if (validChannels.includes(channel)) {
             ipcRenderer.send(channel, args);
         }
+    },
+
+    // Playlist Functionality
+    PlaylistSend: (channel, args) => {
+        let validChannels = ['playlist-update'];
+        //console.log(args);
+        if(validChannels.includes(channel)) {
+            ipcRenderer.send(channel, args);
+        }
+    },
+
+    PlaylistInvoke: (channel, args) => {
+        let validChannels = ['playlist-load'];
+        //console.log(args);
+        if(validChannels.includes(channel)) {
+            return ipcRenderer.invoke(channel, args);
+        }
     }
 });
