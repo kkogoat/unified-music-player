@@ -43,7 +43,7 @@ a {
 }
 
 .filled {
-    fill:var(--border-color);
+    fill: var(--border-color);
 }
 
 .is-active .filled {
