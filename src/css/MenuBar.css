@@ -1,0 +1,95 @@
+.MenuBar {
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+    user-select: none;
+
+    /* Dimensions */
+    height: 30px;
+
+    
+    /* Inherit App Color - Step 1*/
+    background-color: var(--background-primary);
+    border-color: var(--border-color);
+
+    /* Display */
+}
+
+#BurgerMenu {
+    float: left;
+
+    /* Dimensions */
+    height: 100%;
+
+    /* Display */
+    display: flex;
+
+    /* Inherit App Color - Step 2*/
+    background-color: var(--background-primary);
+    box-sizing: border-box;
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.burger {
+    padding: 1px 5px 0px 25px;
+    background: url(../assets/MenuBarAssets/menu_white_18dp.svg);
+    background-position: 6px 6px;
+}
+
+#SongTitle {
+    float: left;
+    text-align: left;
+
+    /* Dimensions */
+    height: 100%;
+    width: calc(100% - 166px);
+
+    /* Fine Tuning */
+    line-height: 29px;
+    padding-left: 15px;
+}
+
+#WindowControl {
+    float: right;
+
+    /* Dimensions */
+    height: 100%;
+
+    /* Display */
+    display: flex;
+
+    /* Inherit App Color - Step 2*/
+    background-color: var(--background-primary);
+}
+
+.quit {
+    padding: 0px 5px 0px 25px;
+    background: url(../assets/MenuBarAssets/close_white_18dp.svg);
+    background-position: 6px 6px;
+}
+
+.mini {
+    padding: 0px 5px 0px 25px;
+    background: url(../assets/MenuBarAssets/minimize_white_18dp.svg);
+    background-position: 6px 0px;
+}
+
+.max {
+    padding: 0px 5px 0px 25px;
+    background: url(../assets/MenuBarAssets/square_white_18dp.svg);
+    background-position: 6px 6px;
+}
+
+.WindowControl-button {
+    -webkit-app-region: no-drag;
+    color: inherit;
+
+    /* Inherit App Color - Step 3*/
+    background-color: var(--background-primary);
+    background-repeat: no-repeat;
+    border-style: none;
+}
+
+.WindowControl-button:hover {
+    filter: brightness(150%);
+}
