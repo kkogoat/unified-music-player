@@ -30,7 +30,7 @@ export class PlayPause extends Component {
     tick() {
         // re-render by updating state
         if (!this.state.seeking)
-            this.setState({})
+            this.setState({ played: this.getCurrentTime() / this.getDuration() })
     }
     handleChange(e) {
         const filePath = URL.createObjectURL(e.target.files[0]);
@@ -42,13 +42,13 @@ export class PlayPause extends Component {
         this.setState({ played: parseFloat(e.target.value) })
     }
     handleSeekMouseDown() {
-        // this.setState({ seeking: true })
+        this.setState({ seeking: true })
     }
     handleSeekMouseUp(e) {
         if (this.state.player !== null) {
             let duration = this.getDuration()
             this.state.player.currentTime = parseFloat(e.target.value) * duration
-            // this.setState({ seeking: false })
+            this.setState({ seeking: false })
         }
     }
     // function to play audio saved on computer
