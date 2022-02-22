@@ -18,16 +18,20 @@ function App() {
         <Router>
             <div className='App'>
                 {/* THIS IS HOW TO COMMENT */}
-                <MenuBar />
-                <NavBar />
+                <div className='Header'>
+                    <MenuBar />
+                    <NavBar />
+                </div>
                 <div className='Content'>
                     <Switch>
                         <Route exact path="/"><Playlist /></Route>
                         <Route exact path="/explore"><Explore /></Route>
                     </Switch>
                 </div>
+                <div className='Footer'>
                 <PlayPause />
                 <SoundCloud/>
+                </div>
             </div>
         </Router>
     );
