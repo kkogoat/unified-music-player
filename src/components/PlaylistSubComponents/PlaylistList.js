@@ -10,11 +10,15 @@ export class PlaylistList extends Component {
     
     render() {
         return(
-            <ul>
+            <div>
                 {this.props.playlist.map(playlistItem => (
-                    <PlaylistItem key={playlistItem.id} playlistItem={playlistItem} removePlaylistItem={this.props.removePlaylistItem}/>
+                    <PlaylistItem key={playlistItem.id} 
+                    playlistItem={playlistItem} 
+                    removePlaylistItem={this.props.removePlaylistItem}
+                    setActiveID={this.props.setActiveID}
+                    activeID={this.props.activeID}/>
                 ))}
-            </ul>
+            </div>
         );
     }
 
