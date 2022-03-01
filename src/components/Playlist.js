@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import '../css/Playlist.css';
 import { PlaylistItemForm } from './PlaylistSubComponents/PlaylistItemForm';
 import { PlaylistList } from './PlaylistSubComponents/PlaylistList';
+import { TracklistItemForm } from './PlaylistSubComponents/TracklistItemForm';
 import { TracklistList } from './PlaylistSubComponents/TracklistList';
 
 const LOCAL_STORAGE_KEY = 'playlist-list-playlistItems'
@@ -14,14 +15,21 @@ export class Playlist extends Component {
         super(props);
         this.state = {
             playlist: [],
-            activeID: 0
+            activeID: 0,
+            tracklist: []
         };
+
+        // Playlist Functions
         this.addPlaylistItem = this.addPlaylistItem.bind(this);
         this.removePlaylistItem = this.removePlaylistItem.bind(this);
         this.setActiveID = this.setActiveID.bind(this);
+
+        // Tracklist Functions
+        this.addTracklistItem = this.addTracklistItem.bind(this);
+        this.removeTracklistItem = this.removeTracklistItem.bind(this);
     }
 
-    // Playlist Load
+    // Component Load Procedures
     async componentDidMount() {
         var _playlistArgs = {
             key: LOCAL_STORAGE_KEY,
@@ -43,11 +51,13 @@ export class Playlist extends Component {
 
         if(storageActiveID) {
             this.setState({activeID: storageActiveID});
+            const storageTracklist = JSON.parse(await window.api.TracklistInvoke('tracklist-load', this.state.activeID));
+            this.setState({tracklist: storageTracklist});
         }
     }
 
     // Playlist Update
-    componentDidUpdate(previousProps, previousState) {
+    async componentDidUpdate(previousProps, previousState) {
         var _playlistArgs = {
             key: LOCAL_STORAGE_KEY,
             message: "",
@@ -60,27 +70,66 @@ export class Playlist extends Component {
             payload: this.state.activeID
         }
 
+        var _tracklistArgs = {
+            key: this.state.activeID,
+            message: "",
+            payload: JSON.stringify(this.state.tracklist)
+        }
+
+
+        // Playlist Save
         if(previousState.playlist !== this.state.playlist) {
             window.api.PlaylistSend('playlist-update', _playlistArgs);
         }
-
+        
+        // Active ID Save & Load active ID tracklist
         if(previousState.activeID !== this.state.activeID) {
             window.api.PlaylistSend('playlist-update-activeID', _activeIDArgs);
+            const storageTracklist = JSON.parse(await window.api.TracklistInvoke('tracklist-load', this.state.activeID));
+            this.setState({tracklist: storageTracklist});
         }
-    }
-
-    addPlaylistItem(playlistItem) {
-        this.setState({playlist: [playlistItem, ...this.state.playlist]});
-    }
-
-    removePlaylistItem(id) {
-        this.setState({playlist: this.state.playlist.filter(playlistItem => playlistItem.id !== id)});
+        
+        // Tracklist Save
+        if(previousState.tracklist !== this.state.tracklist) {
+            if(previousState.activeID === this.state.activeID) {
+                window.api.TracklistSend('tracklist-update', _tracklistArgs);
+            }
+        }
     }
 
     setActiveID(id) {
         this.setState({activeID: id}, function () {
             console.log(this.state.activeID);
         });
+    }
+
+    // Playlist Functions
+    addPlaylistItem(playlistItem) {
+        this.setState({playlist: [playlistItem, ...this.state.playlist]});
+    }
+
+    removePlaylistItem(id) {
+        this.setState({playlist: this.state.playlist.filter(playlistItem => playlistItem.id !== id)});
+
+        // Delete Associated Tracklist
+        window.api.TracklistSend('tracklist-delete', id);
+
+        if(id === this.state.activeID) {
+            this.setState({tracklist: []});
+        }
+    }
+
+    // Tracklist Functions
+    addTracklistItem(tracklistItem) {
+        if(this.state.tracklist.some(tlItem => tlItem.id === tracklistItem.id)) {
+            console.log("Song Already Exists!")
+            return;
+        }
+        this.setState({tracklist: [tracklistItem, ...this.state.tracklist]});
+    }
+
+    removeTracklistItem(id) {
+        this.setState({tracklist: this.state.tracklist.filter(tracklistItem => tracklistItem.id !== id)});
     }
 
     render() {
@@ -95,7 +144,9 @@ export class Playlist extends Component {
                     activeID={this.state.activeID}/>
                 </div>
                 <div className='playlist-tracklist'>
-                    <TracklistList />
+                    <TracklistItemForm addTracklistItem={this.addTracklistItem} />
+                    <TracklistList tracklist={this.state.tracklist}
+                    removeTracklistItem={this.removeTracklistItem}/>
                 </div>
             </div>
         );
