@@ -72,6 +72,7 @@ app.on('activate', function () {
 
 // IPC MAIN MENU BAR
 require('./js/MenuBarHandler.js');
-require('./js/PlaylistHandler.js')
+require('./js/PlaylistHandler.js');
 require('./js/PlayPauseHandler.js');
+require('./js/TracklistHandler.js');
 // END IPC MAIN MENU BAR

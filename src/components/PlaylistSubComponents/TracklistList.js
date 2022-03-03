@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-// import '../css/Playlist.css';
+// import '../css/Tracklist.css';
+import { TracklistItem } from './TracklistItem';
 
 export class TracklistList extends Component {
     constructor(props) {
@@ -9,90 +10,12 @@ export class TracklistList extends Component {
     
     render() {
         return(
-            // TEST TRACKLIST
             <div>
-                    TEST TEST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
-                    TRACKLIST <br></br>
+                {this.props.tracklist.map(tracklistItem => (
+                    <TracklistItem key={tracklistItem.id}
+                    tracklistItem={tracklistItem}
+                    removeTracklistItem={this.props.removeTracklistItem}/>
+                ))}
             </div>
         );
     }
