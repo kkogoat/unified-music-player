@@ -15,7 +15,8 @@ export class TracklistList extends Component {
                     <TracklistItem key={tracklistItem.id}
                     tracklistItem={tracklistItem}
                     removeTracklistItem={this.props.removeTracklistItem}
-                    changeActiveSong={this.props.changeActiveSong}/>
+                    changeActiveSong={this.props.changeActiveSong}
+                    activeSong={this.props.activeSong}/>
                 ))}
             </div>
         );

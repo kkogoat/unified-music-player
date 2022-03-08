@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './sub_css/TracklistItem.css';
+
 export class TracklistItem extends Component {
     constructor(props) {
         super(props);
@@ -24,6 +26,8 @@ export class TracklistItem extends Component {
     render() {
         return(
             <div
+            className='tracklistItem'
+            id={this.props.tracklistItem.id === this.props.activeSong ? 'isActiveTrack' : ''}
             onContextMenu={this.handleRemoveClick}
             onClick={this.handleClick}>
                 {this.props.tracklistItem.id}

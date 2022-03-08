@@ -67,6 +67,7 @@ export class App extends Component {
                             <Route exact path="/">
                                 <Playlist 
                                 changeActiveSong={this.changeActiveSong}
+                                activeSong={this.state.activeSong}
                                 />
                             </Route>
                             <Route exact path="/explore"><Explore /></Route>
