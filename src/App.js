@@ -1,3 +1,4 @@
+import React, { Component } from 'react';
 
 // CSS
 import './css/App.css';
@@ -13,28 +14,29 @@ import {PlayPause} from './components/PlayPause';
 import{SoundCloud} from  './components/SoundCloud';
 
 // Main Window that holds all other components
-function App() {
-    return (
-        <Router>
-            <div className='App'>
-                {/* THIS IS HOW TO COMMENT */}
-                <div className='Header'>
-                    <MenuBar />
-                    <NavBar />
+export class App extends Component {
+    render() {
+        return (
+            <Router>
+                <div className='App'>
+                    {/* THIS IS HOW TO COMMENT */}
+                    <div className='Header'>
+                        <MenuBar />
+                        <NavBar />
+                    </div>
+                    <div className='Content'>
+                        <Switch>
+                            <Route exact path="/"><Playlist /></Route>
+                            <Route exact path="/explore"><Explore /></Route>
+                        </Switch>
+                    </div>
+                    <div className='Footer'>
+                    <PlayPause />
+                    <SoundCloud/>
+                    </div>
                 </div>
-                <div className='Content'>
-                    <Switch>
-                        <Route exact path="/"><Playlist /></Route>
-                        <Route exact path="/explore"><Explore /></Route>
-                    </Switch>
-                </div>
-                <div className='Footer'>
-                <PlayPause />
-                <SoundCloud/>
-                </div>
-            </div>
-        </Router>
-    );
+            </Router>
+        );
+    }
 }
 
-export default App
