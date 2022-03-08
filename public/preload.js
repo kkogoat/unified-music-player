@@ -10,6 +10,21 @@ contextBridge.exposeInMainWorld('api', {
     // testReceive: (callback) => ipcRenderer.on('test-receive', (event, data) => { callback(data) }),
     // // End Example Methods
 
+    // App Functionality
+    AppSend: (channel, args) => {
+        let validChannels = ['app-update-activeSong'];
+        if(validChannels.includes(channel)) {
+            ipcRenderer.send(channel, args);
+        }
+    },
+
+    AppInvoke: (channel, args) => {
+        let validChannels = ['app-load-activeSong'];
+        if(validChannels.includes(channel))  {
+            return ipcRenderer.invoke(channel, args);
+        }
+    },
+
     // Menu Bar Functionality
     MenuBar: (channel, args) => {
         let validChannels = ['quit-app', 'minimize-app', 'maximize-app', 'menu-app'];

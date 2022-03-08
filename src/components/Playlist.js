@@ -146,7 +146,8 @@ export class Playlist extends Component {
                 <div className='playlist-tracklist'>
                     <TracklistItemForm addTracklistItem={this.addTracklistItem} />
                     <TracklistList tracklist={this.state.tracklist}
-                    removeTracklistItem={this.removeTracklistItem}/>
+                    removeTracklistItem={this.removeTracklistItem}
+                    changeActiveSong={this.props.changeActiveSong}/>
                 </div>
             </div>
         );

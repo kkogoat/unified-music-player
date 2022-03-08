@@ -5,6 +5,9 @@ import '../css/MenuBar.css';
 
 // Menu, Minimize, Maximize, Exit
 export class MenuBar extends Component {
+    constructor(props) {
+        super(props);
+    }
 
     // Exit
     quitBtn() {
@@ -36,7 +39,7 @@ export class MenuBar extends Component {
 
                 {/* Current Artist-Song */}
                 <div id="SongTitle">
-                    Artist - Song
+                    {this.props.activeSong}
                 </div>
 
                 {/* Window Controls */}

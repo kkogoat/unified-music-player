@@ -71,6 +71,7 @@ app.on('activate', function () {
 
 
 // IPC MAIN MENU BAR
+require('./js/AppHandler.js');
 require('./js/MenuBarHandler.js');
 require('./js/PlaylistHandler.js');
 require('./js/PlayPauseHandler.js');
