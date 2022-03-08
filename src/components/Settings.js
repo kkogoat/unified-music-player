@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 
 // CSS
-import '../css/MenuBar.css';
+//import '../css/Settings.css';
 
 // Menu, Minimize, Maximize, Exit
-export class MenuBar extends Component {
+export class Settings extends Component {
 
     // Exit
-    quitBtn() {
+    /*quitBtn() {
         window.api.MenuBar('quit-app');
     }
 
@@ -24,7 +24,7 @@ export class MenuBar extends Component {
     // Menu
     menuBtn () {
         window.api.MenuBar('menu-app');
-    }
+    }*/
 
     render() {
         return (
@@ -44,8 +44,7 @@ export class MenuBar extends Component {
                     <button className='WindowControl-button mini' onClick={this.minimizeBtn}></button>
                     <button className='WindowControl-button max' onClick={this.maximizeBtn}></button>
                     <button className='WindowControl-button quit' onClick={this.quitBtn}></button>
-                 </div>
-
+                </div>
 
             </div>
         )

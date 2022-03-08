@@ -28,5 +28,14 @@ ipcMain.on('maximize-app', function (args) {
 
 // Menu App
 ipcMain.on('menu-app', function (args) {
-    console.log("UMP-Menu");
+    console.log("UMP-MenuSettings");
+    subwindow = new BrowserWindow({
+        webPreferences: {
+            nodeIntegration: true
+        },
+        width: 800, height: 600
+    })
+    console.log("after creating subwindow...")
+    subwindow.loadFile('./public/loadsettings.html')
+
 });

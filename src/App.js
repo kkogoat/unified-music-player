@@ -12,6 +12,8 @@ import { Explore } from './components/Explore';
 import {PlayPause} from './components/PlayPause';
 import{SoundCloud} from  './components/SoundCloud';
 
+import {Settings} from './components/Settings';
+
 // Main Window that holds all other components
 function App() {
     return (
