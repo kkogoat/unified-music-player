@@ -23,7 +23,7 @@ export class SoundCloud extends Component {
             
             <div>
                 <iframe id="sc-widget" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/skrillex/skrillex-bangarang-feat-sirah" width="80%" height="200" scrolling="no" frameBorder="no"></iframe>
-                <button className="button button1" onClick={this.SoundCloudDisplay}>Load SoundCloud URL</button>  {/* load sound cloud widget, default is a skrillex right now */}   
+                <button className="button button1" onClick={this.SoundCloudDisplay}>Load SoundCloud URL</button>  {/* load sound cloud widget, default is a skrillex song right now */}   
             <input type="text" className ="loadSoundcloud" id="myText" defaultValue="Enter SoundCloud url here" onChange= {this.handleChangeInputBoxSoundCloud}/>
             
             </div>
